@@ -1,7 +1,7 @@
 class ZipCode < ActiveRecord::Base
   attr_reader :state, :city, :area_code, :time_zone
 
-  def initialize(zip = "90210")
+  def initialize(zip)
     # Gyoku.convert_symbols_to :camelcase
     client = Savon.client(wsdl: "http://www.webservicex.net/uszip.asmx?WSDL")
     response = client.call(:get_info_by_zip, message: { "USZip" => zip})
@@ -15,4 +15,8 @@ class ZipCode < ActiveRecord::Base
       end
     end
   end
+
+	def get
+		return @city
+	end
 end

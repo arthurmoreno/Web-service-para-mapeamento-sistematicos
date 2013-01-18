@@ -1,0 +1,5 @@
+class PaginaInicialController < ApplicationController
+	def pagina
+		render text:"Pagina Inicial"
+	end
+end
