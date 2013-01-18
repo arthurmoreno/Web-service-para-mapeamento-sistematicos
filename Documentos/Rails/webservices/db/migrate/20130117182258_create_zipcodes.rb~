@@ -1,0 +1,8 @@
+class CreateZipcodes < ActiveRecord::Migration
+  def change
+    create_table :zipcodes do |t|
+			add_column :state, :city, :area_code, :time_zone, limit: 40
+      t.timestamps
+    end
+  end
+end
