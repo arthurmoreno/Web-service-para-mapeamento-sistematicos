@@ -1,0 +1,2 @@
+class WebService
+end
